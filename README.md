@@ -3,7 +3,6 @@
 [![NuGet](https://img.shields.io/nuget/v/Nuget.Core.svg)](https://www.nuget.org/packages/SourceMapSecurity.Core/1.0.0) 
 [![NuGet](https://img.shields.io/nuget/dt/Microsoft.AspNetCore.Mvc.svg)](https://www.nuget.org/packages/SourceMapSecurity.Core/1.0.0)
 
-
 Easy to use ASP.NET Core middleware for restricting access to JavaScript and CSS source map (.map) files.
 
 This middleware allows you to deploy your source maps to your production environment without worrying about the public from viewing your source maps or debugging JavaScript. 
