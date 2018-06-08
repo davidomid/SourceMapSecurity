@@ -19,20 +19,24 @@ All you need to do is add this middleware to your *Configure* method in the *Sta
 ### Most basic configuration (no options specified). 
 
 ```csharp
-// Default options, all clients are forbidden from downloading source maps and by default receive a 403 status code. 
+// Default options, all clients are forbidden from downloading source maps and by 
+// default receive a 403 status code. 
 app.UseSourceMapSecurity();
 ```
 
 ```csharp
 app.UseSourceMapSecurity(new SourceMapSecurityOptions()
 {
-    // You can modify the HTTP status code returned to the client when they don't have access, in case you would rather
-    // not show that a resource is there at all. 
+    // You can modify the HTTP status code returned to the client when they don't have access, 
+	// in case you would rather not show that a resource is there at all. 
     DisallowedHttpStatusCode = 404,
-    // You can modify this method to determine whether or not source maps should be returned to the client, based on their HttpContext.
+
+    // You can modify this method to determine whether or not source maps should be returned 
+	// to the client, based on their HttpContext.
     // Returning true means source maps are allowed. 
     // Returning false means source maps are disallowed. 
-    // In this example implementation below, source maps are only allowed if you're logged in, or in the development environment. 
+    // In this example implementation below, source maps are only allowed if you're logged in, 
+	// or in the development environment. 
     IsAllowedAsync = async (context) =>
     {
         if (!env.IsDevelopment() && !context.User.Identity.IsAuthenticated)
