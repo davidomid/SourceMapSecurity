@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Easy to use ASP.NET Core middleware for restricting access to JavaScript and CSS source map (.map) files.</Description>
   </PropertyGroup>
 
   <ItemGroup>
