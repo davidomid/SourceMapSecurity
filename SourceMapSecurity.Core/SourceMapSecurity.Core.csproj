@@ -9,6 +9,9 @@
     <RepositoryUrl>https://github.com/davidomid/SourceMapSecurity</RepositoryUrl>
     <PackageTags>source, map, security, owin, middleware, asp.net, core</PackageTags>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>David Omid</Authors>
+    <Company />
+    <Copyright>© 2018 David Omid</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
