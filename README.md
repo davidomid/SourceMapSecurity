@@ -14,7 +14,7 @@ Please see [this article](https://www.davidomid.com/using-production-source-maps
 ## Prerequisites
 - Your source maps must be external files. This middleware does not help you if you're using inline source maps. 
 - The source map file extensions must end in ".map" (i.e. .js.min.map, .css.min.map, etc.). 
-- (optional) Generate source maps which contain the contents of the original source files, instead of just listing the file names of the source files and deploying those too.
+- (optional) Generate source maps which contain the contents of the original source files, instead of just listing the file paths of the source files and deploying those too. This middleware only protects your source map file, therefore it is highly recommended that you do not deploy your source files separately at all.
 
 ## Installation
 - SourceMapSecurity.Core is available as a [NuGet package](https://www.nuget.org/packages/SourceMapSecurity.Core) from nuget.org. 
