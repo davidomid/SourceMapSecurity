@@ -6,16 +6,24 @@ This middleware allows you to deploy your source maps to your production environ
 
 It works by intercepting HTTP requests for .map files and deciding whether or not they should be displayed to the user, depending on your own rules. 
 
+## Motivations 
+This project exists because using source maps in production is great, as long as the source map files are protected from public access.
+
+Please see [this article](https://www.davidomid.com/using-production-source-maps-securely-in-aspnet-core) for a more detailed explanation on why source maps in production are useful, the problems usually surrounding them and how this middleware solves all of those problems. 
+
 ## Prerequisites
 - Your source maps must be external files. This middleware does not help you if you're using inline source maps. 
 - The source map file extensions must end in ".map" (i.e. .js.min.map, .css.min.map, etc.). 
 - (optional) Generate source maps which contain the contents of the original source files, instead of just listing the file names of the source files and deploying those too.
 
 ## Installation
-- SourceMapSecurity.Core is available as a NuGet package from nuget.org: https://www.nuget.org/packages/SourceMapSecurity.Core
+- SourceMapSecurity.Core is available as a [NuGet package](https://www.nuget.org/packages/SourceMapSecurity.Core) from nuget.org. 
 
 ## How to use
-All you need to do is add this middleware to your *Configure* method in the *Startup* class.
+All you need to do is add this middleware to your *Configure* method in the *Startup* class. 
+
+**NOTE:** The placement of this middleware in your pipeline is important. You need to make sure this it's added before `app.UseStaticFiles();`,
+otherwise it will not restrict access to your source map files. 
 
 ### Most basic configuration (no options specified). 
 
@@ -24,6 +32,8 @@ All you need to do is add this middleware to your *Configure* method in the *Sta
 // default receive a 403 status code. 
 app.UseSourceMapSecurity();
 ```
+
+### More advanced configuration  
 
 ```csharp
 app.UseSourceMapSecurity(new SourceMapSecurityOptions()
