@@ -40,6 +40,10 @@ namespace SourceMapSecurity.Core.Middleware
             {
                 await this.next.Invoke(context);
             }
+            else
+            {
+                context.Response.StatusCode = options.DisallowedHttpStatusCode;
+            }
         }
     }
 }

@@ -12,6 +12,7 @@
     <Authors>David Omid</Authors>
     <Company />
     <Copyright>© 2018 David Omid</Copyright>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
